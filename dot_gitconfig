@@ -30,3 +30,9 @@
 [user]
 	name = Geoffrey Thomas
 	email = geoff.coppertop@gmail.com
+[credential "https://github.com"]
+	helper = 
+	helper = !/home/linuxbrew/.linuxbrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/home/linuxbrew/.linuxbrew/bin/gh auth git-credential
