@@ -17,22 +17,24 @@
 	ui = true
 
 [commit]
-	template = ~/.git/template.txt
+	template = ~/.config/git/template.txt
 
 [core]
 	longpaths = true
 	whitespace = cr-at-eol,tab-in-indent
 	autocrlf = input
 
+[credential "https://github.com"]
+	helper = 
+	helper = !/home/linuxbrew/.linuxbrew/bin/gh auth git-credential
+
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/home/linuxbrew/.linuxbrew/bin/gh auth git-credential
+
 [init]
-  templateDir = ~/.git/
+  templateDir = ~/.config/git/
 
 [user]
 	name = Geoffrey Thomas
 	email = geoff.coppertop@gmail.com
-[credential "https://github.com"]
-	helper = 
-	helper = !/home/linuxbrew/.linuxbrew/bin/gh auth git-credential
-[credential "https://gist.github.com"]
-	helper = 
-	helper = !/home/linuxbrew/.linuxbrew/bin/gh auth git-credential
