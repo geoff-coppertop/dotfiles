@@ -1,0 +1,72 @@
+[include]
+	path = ~/.config/git/config-local
+
+[alias]
+	amd   = commit --amend
+	amdn  = commit --amend --no-edit
+	dft   = difftool
+	doze  = !git reset --hard && git clean -xffd
+	lnc   = log --pretty=format:"%h %s" --graph --decorate
+	met   = mergetool
+	nuke  = !git doze && git submodule foreach --recursive 'git doze'
+	pg    = push origin HEAD
+	pgs   = push --force-with-lease
+	pgt   = push --follow-tags
+	pgu   = !git push --set-upstream origin "$(git branch --show-current)"
+	prc   = !gh pr create --fill
+	prm   = !gh pr merge --squash
+	prs   = !gh pr status
+	prv   = !gh pr view --web
+	st    = status
+	terra = !git nuke && git upd
+	up    = pull --rebase
+	upd   = submodule update --recursive --init
+	wash  = !git clean -xffd && git submodule foreach --recursive 'git clean -xffd'
+
+[color]
+	branch = auto
+	diff   = auto
+	status = auto
+	ui     = true
+
+[commit]
+	template = ~/.config/git/commit-template
+
+[diff]
+	guitool = vscode
+	tool    = vscode
+
+[difftool]
+	prompt = false
+
+[difftool "vscode"]
+	cmd = code --wait --diff $LOCAL $REMOTE
+
+[fetch]
+	parallel          = 16
+	prune             = true
+	recurseSubmodules = false
+
+[log]
+	follow = true
+
+[merge]
+	ff   = false
+	tool = vscode
+
+[mergetool "vscode"]
+	cmd           = code --wait $MERGED
+	keepbackup    = false
+	trustexitcode = true
+
+[pull]
+	rebase = true
+
+[rebase]
+	autoSquash = true
+
+[status]
+	submoduleSummary = true
+
+[submodule]
+	fetchJobs = 16
