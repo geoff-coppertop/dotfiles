@@ -6,7 +6,7 @@
 	amdn  = commit --amend --no-edit
 	dft   = difftool
 	doze  = !git reset --hard && git clean -xffd
-	lnc   = log --pretty=format:"%h %s" --graph --decorate
+	lnc   = log --pretty=format:\"%h %s\" --graph --decorate
 	met   = mergetool
 	nuke  = !git doze && git submodule foreach --recursive 'git doze'
 	pg    = push origin HEAD
