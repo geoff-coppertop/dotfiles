@@ -11,7 +11,9 @@ encrypted secrets are needed here.
 ## What's managed here
 
 - `fish/config.fish` — fish aliases/functions, starship + zoxide `init fish`
-  lines, fzf widget commands and key-binding source.
+  lines, fzf widget commands and key-binding source, and devcontainer
+  engine detection (exports `DEVCONTAINER_USERNS=keep-id` on rootless
+  Podman hosts so devcontainers get the right `--userns` flag).
 - `git/config` — git aliases, color, commit template path, fetch/merge/
   difftool wiring, pull/rebase defaults.
 - `git/commit-template` — commit message template.
