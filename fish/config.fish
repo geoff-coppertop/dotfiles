@@ -27,6 +27,6 @@ set -gx FZF_CTRL_T_COMMAND 'fd --type f'
 set -gx FZF_ALT_C_COMMAND 'fd --type d'
 
 # fzf key bindings (Ctrl+R history, Ctrl+T file, Alt+C cd)
-if test -f /usr/share/doc/fzf/examples/key-bindings.fish
-    source /usr/share/doc/fzf/examples/key-bindings.fish
+if command -q fzf
+    fzf --fish | source
 end
