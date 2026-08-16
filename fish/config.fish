@@ -1,5 +1,5 @@
 function fish_greeting
-    fastfetch
+    fastfetch --disable-linewrap
 end
 
 function ls
